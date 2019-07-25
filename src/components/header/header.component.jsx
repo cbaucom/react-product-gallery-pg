@@ -2,7 +2,7 @@ import React from "react";
 
 import { HeaderContainer, LogoText, SearchContainer, SearchIcon, InputContainer} from "./header.styles.jsx";
 
-const Header = () => (
+const Header = ({searchText, setSearchText}) => (
   <HeaderContainer>
     <LogoText>Amazing Store</LogoText>
     <SearchContainer>
@@ -10,6 +10,8 @@ const Header = () => (
       <InputContainer
         type="search"
         placeholder="Search products by name"
+        value={searchText}
+        onChange={({ target: { value } }) => setSearchText(value)}
       />
     </SearchContainer>
   </HeaderContainer>

@@ -20,12 +20,14 @@ const MainContainer = styled.main`
 `;
 
 const App = () => {
+  const [searchText, setSearchText] = React.useState("");
+
   return (
     <AppContainer>
-      <Header />
+      <Header searchText={searchText} setSearchText={setSearchText} />
       <MainContainer>
         <Categories categories={categories} />
-        <Products products={products} />
+        <Products products={products} searchText={searchText} />
       </MainContainer>
     </AppContainer>
   );
