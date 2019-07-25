@@ -1,21 +1,34 @@
-import React, { Component } from 'react';
-import './App.css';
-import {products, categories} from './data';
+import React, { Component } from "react";
+import styled from "styled-components";
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className="welcome-message">
-        <h1>
-          Welcome to your blank canvas!
-        </h1>
-        <p>
-          Be sure to inspect and familiarize yourself with what data you will be working with. This is already imported for you from './data.js'.
-        </p>
-        <p>
-          There are {products.length} products and {categories.length} categories.
-        </p>
-      </div>
-    )
-  }
+import "./App.css";
+import { products, categories } from "./data";
+import Header from "./components/header/header.component";
+import Categories from "./components/categories/categories.component";
+import Products from "./components/products/products.component";
+
+const AppContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
+
+const MainContainer = styled.main`
+  width: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 2fr 6fr;
+`;
+
+const App = () => {
+  return (
+    <AppContainer>
+      <Header />
+      <MainContainer>
+        <Categories categories={categories} />
+        <Products products={products} />
+      </MainContainer>
+    </AppContainer>
+  );
 };
+
+export default App;
