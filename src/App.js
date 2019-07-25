@@ -15,8 +15,9 @@ const AppContainer = styled.div`
 const MainContainer = styled.main`
   width: 100%;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 40px;
   grid-template-columns: 2fr 6fr;
+  padding: 0 2rem;
 `;
 
 const App = () => {

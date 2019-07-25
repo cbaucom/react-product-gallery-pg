@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   border-top: 3px solid #6364d8;
@@ -10,7 +9,7 @@ export const HeaderContainer = styled.header`
   padding: 0 2rem;
   display: grid;
   grid-template-columns: 2fr 6fr;
-  grid-gap: 10px;
+  grid-gap: 40px;
   justify-content: center;
   align-items: center;
 `;
@@ -27,9 +26,8 @@ export const LogoText = styled.h1`
 export const SearchContainer = styled.div`
   background: #ffffff;
   border-radius: 4px;
-  width: 90%;
+  width: 100%;
   height: 51px;
-  /* margin-left: 2rem; */
   display: flex;
   justify-content: start;
   align-items: center;
@@ -38,7 +36,7 @@ export const SearchContainer = styled.div`
 export const SearchIcon = styled.i.attrs({
   className: "fa fa-search",
 })`
-  padding: 20px;
+  padding: 15px;
   color: #5c5c5c;
   width: 25px;
 `;
@@ -51,4 +49,7 @@ export const InputContainer = styled.input`
   width: 100%;
   padding: 10px;
   border: none;
+  padding-left: 40px;
+  margin-left: -30px;
+  background: none;
 `;
