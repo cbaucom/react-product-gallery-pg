@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import "./App.css";
@@ -21,14 +21,25 @@ const MainContainer = styled.main`
 `;
 
 const App = () => {
-  const [searchText, setSearchText] = React.useState("");
+  const [searchText, setSearchText] = useState("");
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(9999999);
 
   return (
     <AppContainer>
       <Header searchText={searchText} setSearchText={setSearchText} />
       <MainContainer>
-        <Categories categories={categories} />
-        <Products products={products} searchText={searchText} />
+        <Categories
+          categories={categories}
+          setMinPrice={setMinPrice}
+          setMaxPrice={setMaxPrice}
+        />
+        <Products
+          products={products}
+          searchText={searchText}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+        />
       </MainContainer>
     </AppContainer>
   );
