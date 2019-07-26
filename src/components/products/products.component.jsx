@@ -1,26 +1,46 @@
 import React from "react";
 
-import { ProductsContainer, Products, ProductContainer } from "./products.styles";
+import ProductCard from '../product-card/product-card.component'
+import {
+  ProductsContainer,
+  ProductList,
+} from "./products.styles";
 
-const ProductsList = ({ products, searchText, minPrice, maxPrice }) => (
-  <ProductsContainer>
-    <h2>Category Name</h2>
-    <Products>
-      {products
-        .filter(product =>
-          product.name.toLowerCase().includes(searchText.toLowerCase())
-        )
-        .filter(product => product.price >= minPrice)
-        .filter(product => product.price <= maxPrice)
-        .map(({ id, name, images, description, price }) => (
-          <ProductContainer key={id}>
-            <img src={images.medium} alt={description} />
-            <h3 className="name">{name}</h3>
-            <h3 className="price">${price}</h3>
-          </ProductContainer>
-        ))}
-    </Products>
-  </ProductsContainer>
-);
+const Products = ({
+  products,
+  categoryName,
+  searchText,
+  minPrice,
+  maxPrice,
+  selectedCategoryId,
+  setSelectedProductId,
+  setModalOpen,
+}) => {
 
-export default ProductsList;
+  return (
+      <ProductsContainer>
+      <h2>{categoryName === undefined ? "All Products" : categoryName}</h2>
+        <ProductList>
+          {products
+            .filter(product =>
+              product.name.toLowerCase().includes(searchText.toLowerCase())
+            )
+            .filter(product => product.price >= minPrice)
+            .filter(product => product.price <= maxPrice)
+            .filter(product => {
+              if (selectedCategoryId !== undefined) {
+                return product.categoryId === selectedCategoryId
+              }
+            })
+            .map((product) => {
+              return (
+                <ProductCard product={product} id={product.id} key={product.id} setSelectedProductId={setSelectedProductId}
+                setModalOpen={setModalOpen} />
+              );
+            })}
+        </ProductList>
+      </ProductsContainer>
+  );
+};
+
+export default Products;

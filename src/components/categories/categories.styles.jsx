@@ -17,6 +17,14 @@ export const CategoryContainer = styled.section`
     list-style: none;
     padding: 10px 0;
     color: rgba(123, 123, 123, 0.78);
+
+    &:hover {
+      color: #f8cb00;
+    }
+  }
+
+  .active {
+    color: #f8cb00;
   }
 
   .filter-inputs input {
