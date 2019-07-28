@@ -1,17 +1,28 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
+export const BackgroundContainer = styled.div`
   border-top: 3px solid #6364d8;
   background: #f8cb00;
-  max-width: 1400px;
-  height: 166px;
+  width: 100%;
   margin-bottom: 2rem;
+`
+
+export const HeaderContainer = styled.header`
+  width: 90%;
+  height: 166px;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: 2fr 6fr;
   grid-gap: 40px;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    grid-gap: 15px;
+    padding: 0 1rem;
+  }
 `;
 
 export const LogoText = styled.h1`
@@ -21,6 +32,14 @@ export const LogoText = styled.h1`
   letter-spacing: 0;
   line-height: 33px;
   text-align: left;
+
+  @media screen and (max-width: 767px) {
+    font-size: 1.75em;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 1.5em;
+  }
 `;
 
 export const SearchContainer = styled.div`

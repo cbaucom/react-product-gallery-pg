@@ -17,6 +17,7 @@ export const CategoryContainer = styled.section`
     list-style: none;
     padding: 10px 0;
     color: rgba(123, 123, 123, 0.78);
+    cursor: pointer;
 
     &:hover {
       color: #f8cb00;

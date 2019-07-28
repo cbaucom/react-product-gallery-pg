@@ -27,11 +27,10 @@ const Products = ({
             )
             .filter(product => product.price >= minPrice)
             .filter(product => product.price <= maxPrice)
-            .filter(product => {
-              if (selectedCategoryId !== undefined) {
-                return product.categoryId === selectedCategoryId
-              }
-            })
+            .filter(product => selectedCategoryId !== undefined
+              ? product.categoryId === selectedCategoryId
+              : product
+            )
             .map((product) => {
               return (
                 <ProductCard product={product} id={product.id} key={product.id} setSelectedProductId={setSelectedProductId}

@@ -14,11 +14,18 @@ const AppContainer = styled.div`
 `;
 
 const MainContainer = styled.main`
-  width: 100%;
+  width: 90%;
   display: grid;
   grid-gap: 40px;
   grid-template-columns: 2fr 6fr;
   padding: 0 2rem;
+  margin: 0 auto;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 0 1rem;
+    grid-gap: 15px;
+  }
 `;
 
 const App = () => {
