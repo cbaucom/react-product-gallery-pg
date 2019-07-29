@@ -11,8 +11,9 @@ export const ModalOverlay = styled.div`
 
 export const ModalWrapper = styled.div`
   position: absolute;
-  left: 50px;
-  right: 50px;
+  top: 10vh;
+  left: 10vw;
+  right: 10vw;
   background: #ffffff;
   box-shadow: 0 16px 34px 7px rgba(121, 121, 121, 0.1);
   border-radius: 4px;

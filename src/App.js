@@ -59,36 +59,38 @@ const App = () => {
   }, [selectedCategoryId]);
 
   return (
-    <AppContainer>
-      <Header searchText={searchText} setSearchText={setSearchText} />
-      <MainContainer>
-        <Categories
-          categories={categories}
-          setMinPrice={setMinPrice}
-          setMaxPrice={setMaxPrice}
-          selectedCategoryId={selectedCategoryId}
-          setSelectedCategoryId={setSelectedCategoryId}
-        />
-        <Products
-          products={products}
-          categoryName={categoryName}
-          selectedCategoryId={selectedCategoryId}
-          searchText={searchText}
-          minPrice={minPrice}
-          maxPrice={maxPrice}
-          setModalOpen={setModalOpen}
-          setSelectedProductId={setSelectedProductId}
-        />
-        {modalOpen && selectedProduct ? (
-          <Modal
-            product={selectedProduct}
-            setSelectedProduct={setSelectedProduct}
+    <>
+      <AppContainer>
+        <Header searchText={searchText} setSearchText={setSearchText} />
+        <MainContainer>
+          <Categories
+            categories={categories}
+            setMinPrice={setMinPrice}
+            setMaxPrice={setMaxPrice}
+            selectedCategoryId={selectedCategoryId}
+            setSelectedCategoryId={setSelectedCategoryId}
+          />
+          <Products
+            products={products}
+            categoryName={categoryName}
+            selectedCategoryId={selectedCategoryId}
+            searchText={searchText}
+            minPrice={minPrice}
+            maxPrice={maxPrice}
             setModalOpen={setModalOpen}
             setSelectedProductId={setSelectedProductId}
           />
-        ) : null}
-      </MainContainer>
-    </AppContainer>
+        </MainContainer>
+      </AppContainer>
+      {modalOpen && selectedProduct ? (
+        <Modal
+          product={selectedProduct}
+          setSelectedProduct={setSelectedProduct}
+          setModalOpen={setModalOpen}
+          setSelectedProductId={setSelectedProductId}
+        />
+      ) : null}
+    </>
   );
 };
 
