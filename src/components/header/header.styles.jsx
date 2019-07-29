@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
   height: 166px;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: 2fr 6fr;
+  grid-template-columns: 2fr 6fr 1fr;
   grid-gap: 40px;
   justify-content: center;
   align-items: center;
